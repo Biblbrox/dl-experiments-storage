@@ -31,7 +31,14 @@
 
     - name: Create .env file
       ansible.builtin.copy:
-        src: "/home/{{ ansible_user }}/dl-experiments-storage/services/.env.demo"
+      # Copy from current workspace to remote
+        src: "services/.env"
         dest: "/home/{{ ansible_user }}/dl-experiments-storage/services/.env"
-        remote_src: true
         mode: '0644'
+  
+    - name: Manage Docker Compose services
+      community.docker.docker_compose_v2:
+        project_src: /home/{{ ansible_user }}/dl-experiments-storage/services
+        build: always
+        state: present
+        recreate: always

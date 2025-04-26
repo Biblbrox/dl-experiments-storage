@@ -14,9 +14,9 @@ docker compose up -d --build
 ```bash
 pipx install --include-deps ansible
 ```
-
-2. Fill in hosts file with your server configurations.
-3. Run the ansible playbook:
+2. Fill in the `.env` file locally (it will be copied to a remote machine) with your minio and mysql credentials (see `.env.demo`).
+3. Fill in hosts file with your server configurations.
+4. Run the ansible playbook:
 ```bash
 ansible-playbook playbook.yml --ask-pass --ask-become-pass
 ```
