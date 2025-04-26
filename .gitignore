@@ -194,3 +194,10 @@ events.out*
 *.xlsx
 *.ods
 *results
+
+# Vscode
+.vscode
+.vscode-ctags
+
+# Ansible
+.ansible/

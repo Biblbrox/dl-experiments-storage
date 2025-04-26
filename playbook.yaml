@@ -1,0 +1,37 @@
+---
+- name: Install Docker and setup groups
+  hosts: all
+  become: true
+  become_method: ansible.builtin.sudo
+  tasks:
+    - name: Install Docker and Docker Compose
+      ansible.builtin.apt:
+        name:
+          - docker.io
+          - docker-compose
+        state: present
+        update_cache: true
+
+    - name: Add user to docker group
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        group: docker
+        append: true
+        groups:
+          - docker
+
+- name: Setup repository
+  hosts: all
+  tasks:
+    - name: Clone git repository
+      ansible.builtin.git:
+        repo: "git@github.com:Biblbrox/dl-experiments-storage.git"
+        dest: /home/{{ ansible_user }}/dl-experiments-storage
+        version: main
+
+    - name: Create .env file
+      ansible.builtin.copy:
+        src: "/home/{{ ansible_user }}/dl-experiments-storage/services/.env.demo"
+        dest: "/home/{{ ansible_user }}/dl-experiments-storage/services/.env"
+        remote_src: true
+        mode: '0644'
