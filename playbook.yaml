@@ -8,7 +8,7 @@
       ansible.builtin.apt:
         name:
           - docker.io
-          - docker-compose
+          - docker-compose-v2
         state: present
         update_cache: true
 
