@@ -6,7 +6,7 @@
 2. Start the services using docker-compose:
 ```bash
 cd services
-docker-compose up -d
+docker compose up -d --build
 ```
 
 ## Ansible setup 
