@@ -62,5 +62,5 @@ services:
         command: mlflow server --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE} --default-artifact-root s3://mlflow/ --host 0.0.0.0
 
 volumes:
-  - dbdata:/storage_usb/dbdata
-  - minio_data:/storage_usb/minio_data
+    dbdata:
+    minio_data:

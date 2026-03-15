@@ -23,7 +23,7 @@ git.repo(
     name="Clone git repository",
     src="https://github.com/Biblbrox/dl-experiments-storage.git",
     dest=REPO_DIR,
-    branch="main",
+    branch="dev",
 )
 
 files.put(
@@ -36,6 +36,7 @@ files.put(
 server.shell(
     name="Stop docker compose service if exists",
     commands=["docker kill $(docker ps -q)"],
+    _continue_on_error=True,
 )
 
 server.shell(
