@@ -1,4 +1,4 @@
-FROM python:3.11-slim-buster
+FROM python:3.14-slim-trixie
 # Install python packages
 COPY requirements.txt /tmp
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt

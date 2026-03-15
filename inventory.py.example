@@ -1,0 +1,12 @@
+my_hosts = [
+    # vagrant instance
+    (
+        "ubuntu2404",
+        {
+            "ssh_port": 2222,
+            "ssh_hostname": "localhost",
+            "ssh_user": "vagrant",
+            "_sudo": True,
+        },
+    ),
+]

@@ -26,6 +26,8 @@ share/python-wheels/
 *.egg
 *.jukit
 MANIFEST
+uv.lock
+.python-version
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -199,5 +201,7 @@ events.out*
 .vscode
 .vscode-ctags
 
-# Ansible
+# Ansible and pyinfra
 .ansible/
+hosts
+inventory.py
