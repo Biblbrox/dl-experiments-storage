@@ -9,7 +9,7 @@ cd services
 docker compose up -d --build
 ```
 
-## PyInfra setup 
+## Remote setup with PyInfra 
 1. Install pyinfra:
 ```bash
 uv sync
