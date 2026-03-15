@@ -1,6 +1,5 @@
-from gevent.testing.travis import commands
-from pyinfra import host, inventory
-from pyinfra.operations import apt, server, git, files, docker
+from pyinfra import host
+from pyinfra.operations import apt, server, git, files
 
 HOME_DIR = f"/home/{host.data.ssh_user}"
 REPO_DIR = f"{HOME_DIR}/dl-experiments-storage"
