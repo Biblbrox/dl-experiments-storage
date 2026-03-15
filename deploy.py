@@ -37,9 +37,10 @@ server.shell(
     name="Stop docker compose service if exists",
     commands=["docker kill $(docker ps -q)"],
     _continue_on_error=True,
+    _ignore_errors=True,
 )
 
 server.shell(
     name="Run docker compose service",
-    commands=[f"cd {REPO_DIR}/services", "docker compose up -d"],
+    commands=[f"cd {REPO_DIR}/services && docker compose up -d"],
 )
