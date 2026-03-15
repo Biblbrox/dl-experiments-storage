@@ -18,5 +18,5 @@ uv sync
 3. Fill in inventory file with your server configurations.
 4. Run the pyinfra deploy command:
 ```bash
-pyinfra inventory.py deploy.py
+uv run pyinfra inventory.py deploy.py
 ```
